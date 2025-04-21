@@ -1,0 +1,450 @@
+/* Reset default styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  
+}
+
+/* General Container Styles */
+.home-container,
+.login-container,
+.profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+/* Home Page Styles */
+.home-container {
+  height: 100vh; /* Full viewport height for PC */
+  flex-direction: column;
+  padding: 1rem;
+  overflow: hidden; /* No scroll on PC */
+  position: relative; /* For profile button */
+}
+
+/* Profile Button Container (Top Right) */
+.home-container > div:first-child {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin-bottom: 0; /* Override inline style */
+  z-index: 10;
+}
+
+/* Profile Button Styling */
+.home-container > div:first-child button {
+  width: 120px; /* Compact, wider like login button */
+  height: 40px; /* Similar height to login button */
+  background: linear-gradient(90deg, #e74c3c, #c0392b); /* Red to differ from blue */
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Match login button shape */
+  font-size: 1rem; /* Fit "Profile" text */
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Override inline padding */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* Glowing Pulse Animation */
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.9), 0 0 25px rgba(231, 76, 60, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+  }
+}
+
+.home-container > div:first-child button:hover {
+  transform: translateY(-3px); /* Match login’s lift */
+  background: linear-gradient(90deg, #c0392b, #e74c3c); /* Reverse red gradient */
+  animation: glow-pulse 1.2s infinite ease-in-out;
+}
+
+/* Main Content (Split Layout) */
+.home-container > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  height: calc(100% - 60px); /* Adjust for smaller profile button */
+  gap: 1.5rem;
+  padding: 0 1rem;
+  flex-grow: 1;
+  align-items: center;
+  margin-top: 60px; /* Offset for profile button */
+}
+
+/* Left Card */
+.home-container > div:nth-child(2) > div:first-child {
+  flex: 1;
+  max-width: 50%;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+  height: fit-content;
+  max-height: 80%;
+  overflow-y: auto; /* Just in case */
+}
+
+.home-container > div:nth-child(2) > div:first-child h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #3498db;
+}
+
+.home-container > div:nth-child(2) > div:first-child h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #e74c3c;
+}
+
+.home-container > div:nth-child(2) > div:first-child p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Right Buttons (e.g., Explore Library) */
+.home-container > div:nth-child(2) > div:last-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 50%;
+  height: fit-content;
+}
+
+.home-container > div:nth-child(2) > div:last-child button {
+  width: 100%;
+  max-width: 180px;
+  height: 80px;
+  background: linear-gradient(90deg, #2c3e50, #3498db); /* Blue gradient */
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Rectangular */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-container > div:nth-child(2) > div:last-child button:hover {
+  transform: scale(1.05) rotateX(10deg) rotateY(10deg); /* 3D effect */
+}
+
+/* Login and Signup Pages */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.login-box .subtitle {
+  font-size: 1rem;
+  color: #ecf0f1;
+  margin-bottom: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #bdc3c7;
+}
+
+.input-field:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.login-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 10px; /* Shape to match */
+  background: linear-gradient(90deg, #2c3e50, #3498db); /* Blue gradient */
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #3498db, #2c3e50);
+}
+
+.signup-text {
+  font-size: 0.9rem;
+  color: #ecf0f1;
+}
+
+.signup-link {
+  color: #e74c3c;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+  color: #c0392b;
+  text-decoration: underline;
+}
+
+/* Profile Page */
+.profile-container {
+  min-height: 100vh;
+  position: relative;
+  padding: 1rem;
+}
+
+.profile-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-container > div {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
+.profile-container button {
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+}
+
+.profile-container input {
+  font-size: 1rem;
+  padding: 0.6rem;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .home-container {
+    overflow-y: auto; /* Scroll on smaller screens */
+  }
+
+  .home-container > div:nth-child(2) {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    margin-top: 50px;
+  }
+
+  .home-container > div:nth-child(2) > div {
+    max-width: 100%;
+    max-height: none;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child {
+    padding: 1rem;
+  }
+
+  .home-container > div:nth-child(2) > div:last-child {
+    padding-bottom: 1rem;
+  }
+
+  .home-container > div:nth-child(2) > div:last-child button {
+    max-width: 160px;
+    height: 70px;
+    font-size: 0.9rem;
+  }
+
+  .home-container > div:first-child button {
+    width: 100px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 0.5rem;
+  }
+
+  .home-container > div:first-child {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .home-container > div:nth-child(2) {
+    margin-top: 45px;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child h2 {
+    font-size: 1.8rem;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child h3 {
+    font-size: 1.3rem;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child p {
+    font-size: 0.9rem;
+  }
+
+  .home-container > div:first-child button {
+    width: 80px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .login-box {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .login-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .input-field {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .login-btn {
+    padding: 0.7rem;
+    font-size: 1rem;
+  }
+
+  .profile-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container > div:first-child button {
+    width: 60px;
+    height: 25px;
+    font-size: 0.7rem;
+  }
+
+  .home-container > div:nth-child(2) {
+    margin-top: 40px;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child h3 {
+    font-size: 1.2rem;
+  }
+
+  .home-container > div:nth-child(2) > div:first-child p {
+    font-size: 0.8rem;
+  }
+
+  .home-container > div:nth-child(2) > div:last-child button {
+    max-width: 140px;
+    height: 60px;
+    font-size: 0.8rem;
+  }
+
+  .login-box {
+    padding: 1rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-box .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .input-field {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .login-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .signup-text {
+    font-size: 0.8rem;
+  }
+
+  .profile-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .profile-container button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-container input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
