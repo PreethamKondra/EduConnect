@@ -18,34 +18,14 @@ EduConnect is a web-based platform connecting university students for seamless b
 
 ## 🛠️ Tech Stack
 
-**Frontend:**
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-
-**Backend:**
-- Node.js
-- Express.js
-
-**Database:**
-- MongoDB Atlas
-- Mongoose
-
-**Real-Time:**
-- Socket.IO
-
-**Authentication:**
-- JWT
-- Bcrypt
-
-**AI Integration:**
-- Google Generative AI (Gemini API)
-
-**File Processing:**
-- Multer
-- Mammoth
-- PDF-Parse
+- **Frontend:** React + TypeScript + Vite + Tailwind CSS
+- **UI Components:** ShadCN UI
+- **Backend:** Node.js + Express.js
+- **Database:** MongoDB Atlas + Mongoose
+- **Real-Time Communication:** Socket.IO
+- **Authentication:** JWT + Bcrypt
+- **AI Integration:** Google Gemini API (Generative AI)
+- **File Processing:** Multer + Mammoth + PDF-Parse
 
 ---
 
@@ -58,22 +38,3 @@ EduConnect is a web-based platform connecting university students for seamless b
 - 📇 Blockchain for physical book tracking
 - ✍️ Peer annotations for shared materials
 
----
-
-## 🏁 Getting Started
-
-### 📋 Prerequisites
-
-- Node.js (v16+)
-- MongoDB Atlas account
-- Google Generative AI API key
-- Git
-
----
-
-### 🔧 Installation
-
-```bash
-# Clone the Repository
-git clone https://github.com/your-repo/educonnect.git
-cd educonnect
