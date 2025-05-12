@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# EduConnect 🎓📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+EduConnect is a web-based platform connecting university students for seamless book sharing, real-time collaboration, and AI-powered learning. Designed for academic communities, it fosters resource exchange and interactive study in a secure, student-only environment.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ✅ **Book Exchange** – Share physical books or eBooks within a verified student network.
+- 📢 **Book Requests** – Request specific books from peers with ease.
+- 💾 **Wishlist** – Save desired books for future access or borrowing.
+- 💬 **Real-Time Chat** – Connect via direct messages or public chatrooms.
+- ❓ **AI Quiz Generator** – Create MCQs from uploaded materials using Google Gemini AI.
+- 🔐 **Secure Authentication** – JWT-based login ensures a trusted experience.
+- 📄 **Document Processing** – Upload PDFs/Word files for quizzes and metadata extraction.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Frontend:**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**Backend:**
+- Node.js
+- Express.js
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+**Database:**
+- MongoDB Atlas
+- Mongoose
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**Real-Time:**
+- Socket.IO
+
+**Authentication:**
+- JWT
+- Bcrypt
+
+**AI Integration:**
+- Google Generative AI (Gemini API)
+
+**File Processing:**
+- Multer
+- Mammoth
+- PDF-Parse
+
+---
+
+## 🔮 Future Improvements
+
+- 📱 Mobile apps for iOS and Android
+- 🤝 Virtual study groups with shared resources
+- 📊 Learning analytics for quiz performance tracking
+- 🔗 Integration with university LMS platforms
+- 📇 Blockchain for physical book tracking
+- ✍️ Peer annotations for shared materials
+
+---
+
+## 🏁 Getting Started
+
+### 📋 Prerequisites
+
+- Node.js (v16+)
+- MongoDB Atlas account
+- Google Generative AI API key
+- Git
+
+---
+
+### 🔧 Installation
+
+```bash
+# Clone the Repository
+git clone https://github.com/your-repo/educonnect.git
+cd educonnect
